@@ -1,5 +1,5 @@
 streamlit==1.20.0
-streamlit-lottie==0.0.3
+streamlit_lottie==0.0.3
 requests==2.28.1
 Image==9.2.0
 streamlit-option-menu==0.3.2
