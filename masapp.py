@@ -7,7 +7,7 @@ Created on Wed Feb  8 17:35:34 2023
 from PIL import Image
 import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="MASInsight", page_icon=":bar_chart:",layout="centered")
@@ -34,11 +34,11 @@ selected = option_menu(
     },
 )
 
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+#def load_lottieurl(url):
+    #r = requests.get(url)
+    #if r.status_code != 200:
+        #return None
+    #return r.json()
 
 #Use local CSS
 def local_css(file_name):
@@ -48,7 +48,7 @@ def local_css(file_name):
 local_css("style/style.css")
 
 #---LOAD ASSETS---
-lottie_coding = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_rznvYX6xOF.json")
+#lottie_coding = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_rznvYX6xOF.json")
 img_dash_1 =Image.open("C:/Users/27823/MASINSIGHT/masapp/Images/salesdashscreenshot.PNG")        
 
 if selected == "Home":
@@ -78,11 +78,11 @@ if selected == "Home":
                 MASINSIGHT is helping individuals and startups manage their data and grow their business. No joining fees, no hassle. Perfect for the visual-thinker
                 """
             )
-        with right_column:
-            st_lottie(lottie_coding, 
-                      height=500, 
-                      key="coding"
-                      )    
+        #with right_column:
+            #st_lottie(lottie_coding, 
+                      #height=500, 
+                      #key="coding"
+                      #)    
     
 elif selected == "Projects":
 
