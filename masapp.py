@@ -48,7 +48,7 @@ def local_css(file_name):
 local_css("style/style.css")
 
 #---LOAD ASSETS---
-#lottie_coding = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_rznvYX6xOF.json")
+lottie_coding = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_rznvYX6xOF.json")
 img_dash_1 =Image.open("C:/Users/27823/MASINSIGHT/masapp/Images/salesdashscreenshot.PNG")        
 
 if selected == "Home":
