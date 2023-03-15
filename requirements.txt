@@ -3,3 +3,5 @@ streamlit-lottie
 requests
 Image
 streamlit-option-menu
+protobuf
+watchdog
