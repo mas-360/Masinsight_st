@@ -11,26 +11,36 @@ from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="MASInsight", page_icon=":bar_chart:",layout="centered")
-st.title("MASInsight")
+
+#---logo
+img_logo = Image.open("C:/Users/27823/MASINSIGHT/masapp/Images/logo.PNG") 
+
+with st.container():
+    image_col, txt_col = st.columns((0.2,1.5))
+    with image_col:
+        st.image(img_logo)
+    with txt_col:
+        st.title("MASINSIGHT")
+
 #---HORIZONTAL MENU
 
 selected = option_menu(
     menu_title=None,
-    options=["Home", "Projects", "Contact"],
-    icons=["house", "book", "envelope"],
+    options=["Home", "Data Apps", "Contact"],
+    icons=["house", "bar-chart", "envelope"],
     menu_icon="cast",
     default_index=0,
     orientation="horizontal",
     styles={
-        "container": {"padding": "0!important", "background-color": "#90adcd"},
+        "container": {"padding": "0!important", "background-color": "#83c5be"},
         "icon": {"color": "#ffffff", "font-size": "25px"},
         "nav-link": {
             "font-size": "25px",
             "text-align": "left",
             "margin": "0px",
-            "--hover-color": "#90adcd",
+            "--hover-color": "#006d77",
             },
-        "nav-link-selected": {"background-color": "#90adcd"},
+        "nav-link-selected": {"background-color": "#006d77"},
     },
 )
 
@@ -45,46 +55,85 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     
-local_css("style/style.CSS")
+local_css("C:/Users/27823/MASINSIGHT/masapp/style/style.CSS")
 
 #---LOAD ASSETS---
-lottie_coding = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_rznvYX6xOF.json")
-img_dash_1 =Image.open("Images/salesdashscreenshot.PNG")        
+lottie_coding1 = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_q5qeoo3q.json")
+lottie_coding2 = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_DbCYKfCXBZ.json")
+lottie_coding3 = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_tCCSYl.json")
+img_dash_1 =Image.open("C:/Users/27823/MASINSIGHT/masapp/Images/salesdashscreenshot.PNG") 
 
 if selected == "Home":
 
     #---HEADER SECTION ---
     with st.container():
         #st.title("MASInsight")
-        st.title("Visually dynamic, interactive web app, from your Excel data")
+        st.header("Turn your Excel files into an interactive, dynamic data app.")
         st.write("""
-                 Statistical Modeling to solve Finance and Marketing business Problems in Python
+                 Visualize your Excel data & become data-driven.
                  
                  """)
-        st.write("[Contact Us >] (https://http://localhost:8501/#get-in-touch)")
+        #st.write("[Contact Us >] (https://http://localhost:8501/#get-in-touch)")
         st.button("Contact Us")
         
         
     #--- ABOUT ---
     with st.container():
         st.write("---")
-        left_column, right_column = st.columns(2)
+        left_column, right_column = st.columns((1,1))
         with left_column:
-            st.header("The affordable industry standard")
+            st.header("Become data-driven & produce business value.")
             st.write("##")
             st.write(
                 """
-                WebApp platform is flexible. It evolves to suit your situation, whether you're an individual, startup or business
-                MASINSIGHT is helping individuals and startups manage their data and grow their business. No joining fees, no hassle. Perfect for the visual-thinker
-                """
-            )
+                Barriers to producing business value indicate lack of necessary technology to improve use of data.
+                Whether you're an individual, start-up or business it's now easy & affordable to understand your data and reach your strategic goals.
+                """)
         with right_column:
-            st_lottie(lottie_coding, 
+            st_lottie(lottie_coding1, 
                       height=500, 
                       key="coding"
-                      )    
+                      ) 
+                      
+        with st.container():
+            st.write("---")
+            lft_col, rght_col = st.columns((1,1))
+            with lft_col:
+                st_lottie(lottie_coding2, 
+                          height=500, 
+                          key="coding2"
+                          ) 
+        
+            with rght_col:
+               st.header("How your data is transformed.")
+               st.write("##")
+               st.write(
+                   """
+                   MASINSIGHT transforms your raw data into an interactive data app all using Python.
+                   From cleansing, modeling and visualizing into a data app. Turning your information into insights.
+                   """)
+                           
+    with st.container():
+        st.write("---")
+        left_col, right_col = st.columns((1,1))
+        with left_col:
+            st.header("Your data is secure.")
+            st.write("##")
+            st.write(
+                """
+                All data apps are served entirely over HTTPS ensuring all data is encrypted. 
+                You are in control as to who has access & permissions to your data apps in your business. 
+                """
+            )
+        with right_col:
+            st_lottie(lottie_coding3, 
+                      height=500, 
+                      key="coding3"
+                      ) 
+            
+        
     
-elif selected == "Projects":
+elif selected == "Data Apps":
 
     with st.container():
         st.write("---")
@@ -110,7 +159,7 @@ elif selected == "Contact":
     with st.container():
         st.write("---")
         st.header("Get In Touch!")
-        st.write("Find out how to get your own web app")
+        st.write("Find out how to get your own data app by filling out the form below.")
         st.write("##")
         
         contact_form = """
