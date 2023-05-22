@@ -10,7 +10,7 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title="MASInsight", page_icon=":bar_chart:",layout="centered")
+st.set_page_config(page_title="MASInsight", page_icon=":bar_chart:",layout="wide")
 
 #---logo
 img_logo = Image.open("C:/Users/27823/MASINSIGHT/masapp/Images/logo.PNG") 
